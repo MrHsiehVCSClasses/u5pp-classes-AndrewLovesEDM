@@ -38,6 +38,16 @@ public class InputHelperTests {
         ih = new InputHelper(sc);
         assertFalse(ih.getYesNoInput(prompt));
         sc.close();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     @Test
