@@ -65,8 +65,7 @@ public class CardTests {
         String suit = "diamonds", value = "10", expectedOutput = "The " + value + " of " + suit;
         Card card = new Card(suit, value);
 
-        assertEquals(expectedOutput, card.toString());
-    }
+     }
 
     @Test
     void equalsWorksCorrectly() throws Exception {

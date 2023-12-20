@@ -1,29 +1,26 @@
 package u5pp;
 
 import java.util.Scanner;
-
+import java.util.Random;
 
 public class Dice {
+	//instance variables
 	Scanner sc;
-	//naming instance variables
 	private int numSides;
 	private String color;
 	private int currentSide;
 	
 	public Dice() {
-		//these are the default settings for the dice
 		this.currentSide = 1;
 		this.numSides = 6;
 		this.color = "green";
 	
 	}
 	public int getSides() {
-		//returns the set number of sides
 		return numSides;
 	}
 	
 	public int getCurrentSide() {
-		//returns the set current number on the dice
 		return currentSide;
 	}
 	public String getColor() {
@@ -35,7 +32,7 @@ public class Dice {
 	}
 	
 	public String toString() {
-		return "The " + color + " " + numSides + " -sided dice is showing " + currentSide;
+		return "The " + color + " " + numSides + "-sided dice is showing " + currentSide;
 	}
 	
 	public Dice(int numSides) {
@@ -50,11 +47,21 @@ public class Dice {
 		this.currentSide = startingSide;
 		this.color = color;
 	}
+	private int maximumValue;
+    private Random urdad;
+
+    // creates the maximum
+    public void random(int maximum) {
+        maximumValue = maximum;
+        urdad = new Random();
+    }
+
 	public int roll() {
 		//rolls a random number between 1 and max number of sides
 		sc.nextLine();
-		currentSide = (int) (Math.random() * numSides) + 1;
-		return currentSide;
+		//currentSide = (int) (Math.random());
+		return urdad.nextInt(maximumValue) + 1;
+		//return currentSide;
 	}
 	public void changeSide(int num) {
 		if (1 <= num && num <= numSides) {
@@ -68,4 +75,5 @@ public class Dice {
 		this.numSides = num;
 	}
 	
+
 }
